@@ -1,29 +1,132 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #4a00e0, #8e2de2);
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #4a00e0;
+}
+
+/* Container for home page */
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 80px);
+  padding: 2rem;
 }
 
+.container h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.container p {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Card */
 .card {
   background: white;
   padding: 40px;
   border-radius: 15px;
   text-align: center;
-  width: 300px;
+  width: 90%;
+  max-width: 400px;
+  margin: 2rem auto;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-a {
+.card h1 {
+  color: #4a00e0;
+  margin-bottom: 1.5rem;
+}
+
+.card p {
+  color: #333;
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.card ul {
+  text-align: left;
+  list-style-position: inside;
+  margin: 1rem 0;
+}
+
+.card ul li {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.card a {
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 1.5rem;
   text-decoration: none;
   color: #4a00e0;
   font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 2px solid #4a00e0;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-ul {
-  text-align: left;
+.card a:hover {
+  background-color: #4a00e0;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    gap: 1rem;
+  }
+
+  .navbar a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .container h1 {
+    font-size: 1.8rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  .card {
+    width: 95%;
+    padding: 2rem;
+  }
 }
